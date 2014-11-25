@@ -5,6 +5,7 @@ ruby '2.1.4'
 gem 'rails', '4.1.7'
 gem 'bootstrap-sass'#, '2.3.2.0'
 gem 'pg'#, '0.15.1'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
   gem 'minitest'
