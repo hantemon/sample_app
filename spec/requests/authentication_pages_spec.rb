@@ -49,8 +49,9 @@ describe "Authentication" do
         describe "in the Users controller" do
 
           describe "visiting the user index" do
-            before {visit users_path}
-            it {should have_title('All users')}
+            before {get users_path}
+            specify { expect(response).to redirect_to(signin_path) }
+            #it {should have_title('All users')}
           end
 
           describe "visiting the edit page" do
