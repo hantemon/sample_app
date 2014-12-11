@@ -1,9 +1,9 @@
 @import "bootstrap";
 
 $grayMediumLight: #eaeaea;
-$grayLight: lighten($gray-base, 46.7%);
-$grayDarker: lighten($gray-base, 13.5%);
-$grayLighter: lighten($gray-base, 93.5%);
+//$grayLight: lighten($gray-base, 46.7%);
+//$grayDarker: lighten($gray-base, 13.5%);
+//$grayLighter: lighten($gray-base, 93.5%);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
