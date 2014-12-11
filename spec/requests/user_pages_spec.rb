@@ -4,6 +4,26 @@ describe "User Pages" do
 
   subject { page }
 
+  #describe "prevent deleting admin by himself" do
+  #  let(:admin) { FactoryGirl.create(:admin) }
+  #  before { sign_in admin }
+
+  #  it "shouldn't be able to delete himself" do
+  #    expect do
+  #      delete user_path(admin)
+  #   end.not_to change(User, :count).by(-1)
+  #  end
+  #end
+
+  #describe "should not be able to delete themselves" do
+  #  let(:admin) { FactoryGirl.create(:admin) }
+  #  before do
+  #    sign_in admin
+  #    visit users_path
+  #  end
+  #  it { expect { delete user_path(admin) }.not_to change(User, :count) }
+  #end
+
   describe "index" do
     let(:user) { FactoryGirl.create(:user) }
 
@@ -128,7 +148,7 @@ describe "User Pages" do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "Confirmation",     with: user.password
         click_button "Save changes"
       end
 
