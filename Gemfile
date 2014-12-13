@@ -3,7 +3,7 @@ ruby '2.1.4'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.1.7'
-gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass'#, '2.3.2.0'
 gem 'pg'#, '0.15.1'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
