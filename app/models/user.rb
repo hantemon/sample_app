@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
 	
 	validates :password, length: { minimum: 6 }
 
+	def feed
+    	# Это предварительное решение. См. полную реализацию в "Following users".
+    	Micropost.where("user_id = ?", id) # Знак вопроса гарантирует, что id корректно маскирован прежде чем быть включенным в лежащий в его основе SQL запрос, что позволит избежать серьезной дыры в безопасности называемой SQL инъекция.
+  	end
+
 	def User.new_remember_token
     	SecureRandom.urlsafe_base64
   	end
