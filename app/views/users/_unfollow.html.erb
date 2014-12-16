@@ -1,5 +1,7 @@
 <%= form_for(current_user.relationships.find_by(followed_id: @user),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= f.submit "Unfollow", class: "btn btn-default" %>
+  <div class="btn-group btn-group-3 input-group" data-toggle="buttons">
+    <%= f.submit "Unfollow", class: "btn btn-default" %>
+  </div>
 <% end %>

@@ -5,7 +5,10 @@ updateCountdown = ->
   jQuery(".countdown").css "color", (if (21 > remaining >= 11) then "black")
   jQuery(".countdown").css "color", (if (11 > remaining)  then "red")
 
-jQuery ->
+prepareCountDown = ->
   updateCountdown()
   $("#micropost_content").change updateCountdown
   $("#micropost_content").keyup updateCountdown
+
+$(document).on('ready', prepareCountDown)
+$(document).on('page:load', prepareCountDown)
