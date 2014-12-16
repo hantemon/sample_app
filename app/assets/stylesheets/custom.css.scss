@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 $grayMediumLight: #eaeaea;
+$blue: #049cdb !default;
 //$gray-light: lighten($gray-base, 46.7%);
 //$gray-darker: lighten($gray-base, 13.5%);
 //$gray-lighter: lighten($gray-base, 93.5%);
@@ -145,6 +146,35 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
 }
 
 // forms 
