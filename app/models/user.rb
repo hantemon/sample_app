@@ -32,12 +32,13 @@ class User < ActiveRecord::Base
     	relationships.find_by(followed_id: other_user.id).destroy!
   	end
 
-	def feed
+    def feed
     	# Это предварительное решение. См. полную реализацию в "Following users".
-    	Micropost.where("user_id = ?", id) # Знак вопроса гарантирует, что id корректно маскирован прежде чем быть включенным в лежащий в его основе SQL запрос, что позволит избежать серьезной дыры в безопасности называемой SQL инъекция.
+    	#Micropost.where("user_id = ?", id) # Знак вопроса гарантирует, что id корректно маскирован прежде чем быть включенным в лежащий в его основе SQL запрос, что позволит избежать серьезной дыры в безопасности называемой SQL инъекция.
+      Micropost.from_users_followed_by(self)
   	end
 
-	def User.new_remember_token
+    def User.new_remember_token
     	SecureRandom.urlsafe_base64
   	end
 
